@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Numero secreto 1.0</title>
+
+        <!--Plantilla de Estilos-->
+        <link rel="stylesheet" href="src/css/main.css">
+    </head>
+
+    <body>
+
+        <h1 class="center">Aprendiendo javascript</h1>
+
+        <section data-juego="consigna">
+            <h3 class="center">Consigna</h3>
+            <p>Quiero que crees un juego sencillo del tipo "adivina el número". Debe elegir un número aleatorio entre 1 y 100, luego desafiar al jugador a adivinar el número en 10 intentos. Después de cada intento debería decirle al jugador si ha acertado o no - y si está equivocado, debería decirle si se ha quedado corto, o se ha pasado. También debería decir los números que ya se han probado anteriormente. El juego acabará una vez que el jugador acierte o cuando se acaben los intentos. Cuando el juego se acabe,  se le debe dar al jugador la opción de volver a jugar.</p>
+        </section>
+
+
+        <section data-juego="numeroSecreto">
+            <h3 class="center">ADIVINA EL NUMERO SECRETO</h3>
+            <p>Seleccionamos un número aleatorio entre el 1 y 100. Fijate si puedes adivinarlo en 10 intentos o menos. Vamos a decirte si tu numero es más alto o más bajo.</p>
+            
+            <div>
+                <label for="numero">Ingresa tu numero: </label> <input type="text" name="numero" id="numero" value="">
+                <input class="btn-basic" type="button" value="Enviar" id="registrar">
+            </div>
+
+            <div>
+                <p id="contador">10</p>
+                <p id="marcador"></p>
+                <p id="dialogos"></p>
+                <input class="btn-basic" type="button" id="reset" value="Iniciar Juego">
+            </div>
+        </section>
+
+
+        <section data-juego="updates">
+            <h4 class="center">Updates</h4>
+            <p>Voy a ir mejorando el codigo a medida que avanze en los estudios. Gracias por visitar :)</p>
+            <hr>
+
+            <ul>
+                <li>09/10/2018: Version 1.0 del juego. <a href="./src/doc/error.html">Errores conocidos</a></li>
+            </ul>
+        </section>
+        
+    
+        <!--Codigo JS-->
+        <script src="src/js/main.js"></script>
+    </body>
+</html>
