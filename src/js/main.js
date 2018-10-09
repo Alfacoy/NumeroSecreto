@@ -6,6 +6,8 @@
 
 // ZONA DE VARIABLES
 
+
+/* MEJORAR LOS NOMBRES DE LAS VARIABLES, SON RANCIAS */
 var numero = document.querySelector("#numero");// NUMERO SELECCIONADO POR EL USUARIO
 var marcador = document.querySelector("#marcador");// NUMEROS REGISTRADOS
 var contador = document.querySelector("#contador"); // NUMERO DE INTENTOS
@@ -29,7 +31,7 @@ function secreto() {
 
 // RETORNA EL NUMERO DESIGNADO POR EL JUGADOR
 function registro () {
-    num = parseInt(numero.value,10);
+    num = parseInt(numero.value,10); //Se podria mejorar usando Number(numero.value)
     return num;
 }
 
@@ -51,18 +53,19 @@ function rangos ( valor ) {
 
 // OCULTA EL BOTON DE REINICIO
 function noShowReiniciar () {
-    reset.style.display = "none";
+    reset.style.display = "none"; // BORRAR Y REEMPLAZAR POR CREATEELEMENT y APPENDCHILD + PARENTNODE.REMOVECHILD
 }
 
 // REVELA EL BOTON DE REINICIO
 function showReiniciar () {
-    reset.style.display = "block";
+    reset.style.display = "block"; // BORRAR Y REEMPLAZAR POR CREATEELEMENT Y APPENDCHILD + PARENTNODE.REMOVECHILD
 } 
 
 // REINICIA EL CONTADOR
 function reiniciar (){
     dialogos.innerText = "";
     marcador.innerText = "";
+    dialogos.style.backgroundColor = "#ebbab5";
     intentos = 1;
     contador.innerText = intentos;
     btn_registrar.disabled = false;
@@ -84,39 +87,40 @@ secreto();
 contador.innerText = intentos;
 reset.addEventListener("click", reiniciar);
 
-btn_registrar.addEventListener('click', function() {
+btn_registrar.addEventListener('click', function() { // PASAR TODO A FUNCION Y AGREGARSELA A EL BOTON
 
     registro(); 
 
     console.log("Numero ingresado : " +  num);
 
-    esNumero( num );
+    esNumero( num ); // REVISAR DE SACARLO
 
-    if ( flag == true ){ 
+    if ( flag == true ){  // REVISAR DE SACAR LOS FLAG
 
-        rangos( num );
+        rangos( num ); // REVISAR DE COLOCAR EN OTRO LADO LA FUNCION Y AGREGAR LA NEGACION A NAN
 
-        if ( flag == true) {
+        if ( flag == true) { // ASIGNAR ESTRICTAMENTE IGUAL === A TODOS LOS IF
 
-            if ( num == numSecreto ) {
+            if ( num == numSecreto ) { // MEJORAR CON ELSE IF 
                 dialogos.textContent = ""; 
-                dialogos.textContent = "Ambos numeros coinciden.";
+                dialogos.textContent = "Ambos numeros coinciden."; // MEJORAR COLOCANDO SOLO UNO AL FINAL
+                dialogos.style.backgroundColor = "green";
                 showReiniciar ();
                 bloquear();
             } 
 
-            if ( num > numSecreto ) { 
-                dialogos.textContent = ""; 
+            if ( num > numSecreto ) { // MEJORAR CON ELSE IF 
+                dialogos.textContent = ""; // MEJORAR COLOCANDO SOLO UNO AL FINAL
                 dialogos.textContent = "El numero es menor.";
             }
 
-            if ( num < numSecreto ) {
-                dialogos.textContent = ""; 
+            if ( num < numSecreto ) { // MEJORAR CON ELSE IF 
+                dialogos.textContent = "";  // MEJORAR COLOCANDO SOLO UNO AL FINAL
                 dialogos.textContent = "El numero es mayor.";
             }
 
 
-            marcador.textContent += " " + num; // AGREGA EL NUMERO AL MARCADOR EN EL HTML
+            marcador.textContent += num + " "; // AGREGA EL NUMERO AL MARCADOR EN EL HTML
 
             contador.innerText = intentos ++; // AUMENTAR EL CONTADOR EN EL HTML
 
@@ -135,3 +139,18 @@ btn_registrar.addEventListener('click', function() {
     
 });
 
+
+
+/* ================================================== */
+
+// EJEMPLO A REVISAR
+
+/*
+BUCLE
+var resetParas = document.querySelectorAll('.resultParas p');
+  for (var i = 0 ; i < resetParas.length ; i++) {
+    resetParas[i].textContent = '';
+  }
+
+
+*/
