@@ -70,6 +70,7 @@ function reiniciar (){
     contador.innerText = intentos;
     btn_registrar.disabled = false;
     numero.disabled = false;
+    secreto();
     noShowReiniciar();
 }
 
@@ -136,6 +137,7 @@ btn_registrar.addEventListener('click', function() { // PASAR TODO A FUNCION Y A
 
     numero.value = ""; // RESETEO EL VALOR DEL INPUT TEXT
     flag = true; // RESETEO EL VALOR DEL FLAG
+    numero.focus(); // ORDENA QUE UNA VES INGRESADO EL NUMERO, EL CURSOR SE POSA NUEVAMENTE EN EL SIN REALIZAR UN CLICK
     
 });
 
